@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  erp-frontend:
+    build: ./erp-frontend
+    container_name: erp-frontend_c
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./erp-frontend:/app
+      - ./app/node_modules
+  ns_test:
+    build: ./ns_test
+    container_name: ns_test_c
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
